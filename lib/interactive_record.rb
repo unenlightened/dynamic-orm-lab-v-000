@@ -23,7 +23,7 @@ class InteractiveRecord
   end
 
   def initialize(properties={})
-    properties.each {|property, value| self.send("#{propert}=", value)}
+    properties.each {|property, value| self.send("#{property}=", value)}
   end
 
 
