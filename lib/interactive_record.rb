@@ -61,7 +61,7 @@ require 'pry'
    value = attribute.values[0].to_s
 
    sql = "SELECT * FROM students WHERE #{property} = ?"
-   DB[:conn].execute(sql, value).first
+   DB[:conn].execute(sql, value)
  end
 
 end
