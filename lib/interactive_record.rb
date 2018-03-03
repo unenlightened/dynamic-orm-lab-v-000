@@ -22,9 +22,11 @@ class InteractiveRecord
     attr_accessor attribute.to_sym
   end
 
-  def initialize(properties={})
-    properties.each {|property, value| self.send("#{property}=", value)}
+  def initialize(options={})
+  options.each do |property, value|
+    self.send("#{property}=", value)
   end
+end
 
 
 
