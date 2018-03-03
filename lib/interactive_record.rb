@@ -18,10 +18,6 @@ class InteractiveRecord
     column_names.compact
   end
 
-  def attr_accessor
-    self.column_names.each {|col_name| attr_accessor col_name.to_sym}
-  end
-
   def initialize(properties={})
     properties.each {|property, value| self.send("#{property}=", value)}
   end
@@ -31,7 +27,7 @@ class InteractiveRecord
  end
 
  def col_names_for_insert
-   self.class.column_names.delete("id").join(', ')
+   self.class.column_names.reject!("id").join(', ')
  end
 
  def values_for_insert
@@ -67,7 +63,5 @@ class InteractiveRecord
    sql = "SELECT * FROM students WHERE #{property} = #{value}?"
    DB[:conn].execute(sql)
  end
-
-
 
 end
