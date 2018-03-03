@@ -19,7 +19,7 @@ class InteractiveRecord
   end
 
   def attr_accessor
-    self.column_names.each {|attribute| attr_accessor attribute.to_sym}
+    self.column_names.each {|col_name| attr_accessor col_name.to_sym}
   end
 
   def initialize(properties={})
@@ -35,7 +35,9 @@ class InteractiveRecord
  end
 
  def values_for_insert
+   values = []
 
+   self.class.column_names.each do |col_name|
  end
 
  def save
