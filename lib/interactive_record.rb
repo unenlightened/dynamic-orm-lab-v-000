@@ -62,8 +62,6 @@ require 'pry'
 
    sql = "SELECT * FROM students WHERE #{property} = ?"
    DB[:conn].execute(sql, value)
-
-   binding.pry
  end
 
 end
