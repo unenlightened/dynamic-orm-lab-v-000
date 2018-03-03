@@ -18,15 +18,13 @@ class InteractiveRecord
     column_names.compact
   end
 
-  self.column_names.each do |col_name|
-    attr_accessor col_name.to_sym
+  self.column_names.each do |attribute|
+    attr_accessor attribute.to_sym
   end
 
-  def initialize(options={})
-  options.each do |property, value|
-    self.send("#{property}=", value)
+  def initialize(properties={})
+    properties.each {|property, value| self.send("#{property}=", value)}
   end
-end
 
 
 
