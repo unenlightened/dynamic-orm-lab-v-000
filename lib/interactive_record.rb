@@ -57,7 +57,7 @@ class InteractiveRecord
  end
 
  def self.find_by(attribute)
-   property = attribute.keys[0]
+   property = attribute.keys[0].to_s
    value = attribute.values[0].to_s
 
    sql = "SELECT * FROM students WHERE ? = ?"
