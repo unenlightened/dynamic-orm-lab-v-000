@@ -60,8 +60,8 @@ require 'pry'
    property = attribute.keys[0].to_s
    value = attribute.values[0].to_s
 
-   sql = "SELECT * FROM students WHERE ? = ?"
-   DB[:conn].execute(sql, property, value)
+   sql = "SELECT * FROM students WHERE #{property} = ?"
+   DB[:conn].execute(sql, value)
 
    binding.pry
  end
