@@ -59,9 +59,10 @@ require 'pry'
  def self.find_by(attribute)
    property = attribute.keys[0].to_s
    value = attribute.values[0].to_s
-binding.pry
+
    sql = "SELECT * FROM students WHERE #{property} = #{value}"
    DB[:conn].execute(sql)
+   binding.pry
  end
 
 end
