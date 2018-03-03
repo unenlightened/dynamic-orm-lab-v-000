@@ -62,6 +62,8 @@ require 'pry'
 
    sql = "SELECT * FROM students WHERE ? = ?"
    DB[:conn].execute(sql, property, value)
+
+   binding.pry
  end
 
 end
