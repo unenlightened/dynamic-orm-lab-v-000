@@ -60,7 +60,7 @@ class InteractiveRecord
    property = attribute.keys[0]
    value = attribute.values[0].to_s
 
-   sql = "SELECT * FROM students WHERE #{property} = #{value}?"
+   sql = "SELECT * FROM students WHERE #{property} = #{value}"
    DB[:conn].execute(sql)
  end
 
