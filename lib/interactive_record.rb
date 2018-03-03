@@ -22,6 +22,10 @@ class InteractiveRecord
     attr_accessor attribte.to_sym
   end
 
+  def initialize(properties={})
+    properties.each {|property, value| self.send("#{propert}=", value)}
+  end
+
 
 
 end
