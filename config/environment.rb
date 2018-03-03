@@ -13,7 +13,3 @@ SQL
 
 DB[:conn].execute(sql)
 DB[:conn].results_as_hash = true
-
-def reload!
-  load "environment.rb"
-end
